@@ -18,4 +18,8 @@ public class BusStop {
     public int getStopCount() {
         return this.queue.size();
     }
+
+    public void removeFromQ() {
+        this.queue.remove(0);
+    }
 }
