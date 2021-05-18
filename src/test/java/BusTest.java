@@ -7,12 +7,15 @@ public class BusTest {
 
     private Bus bus;
     private Person person;
+    private BusStop busStop;
 
 
     @Before
     public void before(){
         bus = new Bus("Edinburgh", 0);
         person = new Person();
+        busStop = new BusStop("124");
+        busStop.addToQ(person);
     }
 
     @Test
@@ -22,25 +25,33 @@ public class BusTest {
 
     @Test
     public void canGetAddPassengerToBus() {
-        bus.addPassenger(person);
+        bus.addPassenger(busStop);
         assertEquals(1, bus.getPassengerCount());
     }
 
 @Test
     public void addPassengerToBusIfThereIsCapacity() {
-        bus.addPassenger(person);
-        bus.addPassenger(person);
-        bus.addPassenger(person);
-        bus.addPassenger(person);
-        bus.addPassenger(person);
-        bus.addPassenger(person);
+        busStop.addToQ(person);
+        busStop.addToQ(person);
+        busStop.addToQ(person);
+        busStop.addToQ(person);
+        busStop.addToQ(person);
+        busStop.addToQ(person);
+        bus.addPassenger(busStop);
+        bus.addPassenger(busStop);
+        bus.addPassenger(busStop);
+        bus.addPassenger(busStop);
+        bus.addPassenger(busStop);
+        bus.addPassenger(busStop);
         assertEquals(5, bus.getPassengerCount());
     }
 
     @Test
     public void canRemovePassengerFromBus() {
-        bus.addPassenger(person);
-        bus.addPassenger(person);
+        busStop.addToQ(person);
+        busStop.addToQ(person);
+        bus.addPassenger(busStop);
+        bus.addPassenger(busStop);
         bus.removePassenger();
         assertEquals(1, bus.getPassengerCount());
     }

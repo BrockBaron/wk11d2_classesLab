@@ -12,7 +12,7 @@ public class BusStopTest {
     public void before(){
        busStop = new BusStop("124");
        person = new Person();
-        busStop.addToQ(person);
+       busStop.addToQ(person);
     }
 
     @Test
@@ -22,7 +22,7 @@ public class BusStopTest {
     }
 
     @Test
-    public void name() {
+    public void removeFromQ() {
         busStop.removeFromQ();
         assertEquals(0, busStop.getStopCount());
     }

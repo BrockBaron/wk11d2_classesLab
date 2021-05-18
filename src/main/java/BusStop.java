@@ -7,7 +7,7 @@ public class BusStop {
 
     public BusStop(String name){
         this.name = name;
-        this.queue = new ArrayList<Person>();
+        this.queue = new ArrayList<>();
     }
 
 
@@ -19,7 +19,7 @@ public class BusStop {
         return this.queue.size();
     }
 
-    public void removeFromQ() {
-        this.queue.remove(0);
+    public Person removeFromQ() {
+        return this.queue.remove(0);
     }
 }
