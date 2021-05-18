@@ -35,6 +35,13 @@ public class BusTest {
         bus.addPassenger(person);
         bus.addPassenger(person);
         assertEquals(5, bus.getPassengerCount());
+    }
 
+    @Test
+    public void canRemovePassengerFromBus() {
+        bus.addPassenger(person);
+        bus.addPassenger(person);
+        bus.removePassenger();
+        assertEquals(1, bus.getPassengerCount());
     }
 }
