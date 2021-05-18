@@ -26,7 +26,7 @@ public class BusTest {
         assertEquals(1, bus.getPassengerCount());
     }
 
-//    @Test
+@Test
     public void addPassengerToBusIfThereIsCapacity() {
         bus.addPassenger(person);
         bus.addPassenger(person);
@@ -34,7 +34,7 @@ public class BusTest {
         bus.addPassenger(person);
         bus.addPassenger(person);
         bus.addPassenger(person);
-        assertEquals(6, bus.getPassengerCount());
+        assertEquals(5, bus.getPassengerCount());
 
     }
 }
